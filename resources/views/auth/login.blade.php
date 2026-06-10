@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -14,26 +15,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
 
-    <title>FoodOrder Login</title>
+    <title>Login Pelanggan</title>
+
 </head>
 
-<body class="font-[Poppins] bg-black overflow-hidden">
+<body class="bg-black font-[Poppins] overflow-hidden">
 
-<div class="flex h-screen">
+<div class="w-full h-screen flex">
 
     {{-- LEFT --}}
-    <section class="w-1/2 bg-[#F5F5F5] relative overflow-hidden">
+    <div class="w-1/2
+                bg-[#F5F5F5]
+                relative
+                overflow-hidden">
 
         {{-- RED CIRCLE --}}
         <div class="absolute
-                    w-[900px]
-                    h-[900px]
-                    bg-[#A30000]
+                    w-[950px]
+                    h-[950px]
+                    bg-[#A40000]
                     rounded-full
-                    -left-[430px]
+                    -left-[500px]
                     top-1/2
                     -translate-y-1/2">
-
         </div>
 
         {{-- FOOD IMAGE --}}
@@ -44,15 +48,14 @@
                    top-1/2
                    -translate-y-1/2
                    w-[500px]
+                   h-[500px]
                    rounded-full
                    object-cover
-                   h-[500px]
-                   shadow-2xl"
-        >
+                   shadow-2xl">
 
-        {{-- TRAY ICON --}}
+        {{-- ICON --}}
         <div class="absolute
-                    right-[90px]
+                    right-[70px]
                     top-1/2
                     -translate-y-1/2
                     text-[180px]">
@@ -61,22 +64,22 @@
 
         </div>
 
-    </section>
+    </div>
 
     {{-- RIGHT --}}
-    <section class="w-1/2 relative">
+    <div class="w-1/2 relative">
 
-        {{-- BACKGROUND --}}
-        <div class="absolute inset-0">
+        {{-- BG IMAGE --}}
+        <img
+            src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200"
+            class="absolute
+                   inset-0
+                   w-full
+                   h-full
+                   object-cover">
 
-            <img
-                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1200"
-                class="w-full h-full object-cover"
-            >
-
-            <div class="absolute inset-0 bg-black/70"></div>
-
-        </div>
+        {{-- OVERLAY --}}
+        <div class="absolute inset-0 bg-black/70"></div>
 
         {{-- CONTENT --}}
         <div class="relative
@@ -87,139 +90,117 @@
                     justify-center
                     px-24">
 
+            {{-- TITLE --}}
             <h1 class="text-white
                        text-[64px]
-                       font-bold
-                       leading-tight">
+                       font-bold">
 
                 Selamat Datang!
 
             </h1>
 
-            <p class="text-white text-lg mt-2">
+            <p class="text-white
+                      text-[22px]
+                      mt-2">
 
                 Silahkan Login untuk masuk
 
             </p>
 
-            {{-- FORM --}}
-            <form method="POST"
-                  action="{{ route('login') }}"
-                  class="mt-10">
+            {{-- INPUT --}}
+            <div class="mt-10">
 
-                @csrf
+                <label class="text-white text-sm">
+                    Nama Lengkap
+                </label>
 
-                {{-- NAME --}}
-                <div class="mb-6">
-
-                    <label class="text-white text-sm">
-                        Nama Lengkap
-                    </label>
-
-                    <div class="relative mt-2">
-
-                        <input
-                            type="text"
-                            name="name"
-                            placeholder="Ketik disini"
-                            class="w-full
-                                   bg-[#A30000]
-                                   text-white
-                                   rounded-[14px]
-                                   px-6
-                                   py-5
-                                   outline-none
-                                   placeholder:text-gray-300"
-                        >
-
-                        <span class="absolute
-                                     right-5
-                                     top-1/2
-                                     -translate-y-1/2
-                                     text-white
-                                     text-2xl">
-
-                            👤
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-                {{-- PHONE --}}
-                <div class="mb-6">
-
-                    <label class="text-white text-sm">
-                        Nomor Telepon
-                    </label>
-
-                    <div class="relative mt-2">
-
-                        <input
-                            type="text"
-                            name="phone"
-                            placeholder="Ketik disini"
-                            class="w-full
-                                   bg-[#A30000]
-                                   text-white
-                                   rounded-[14px]
-                                   px-6
-                                   py-5
-                                   outline-none
-                                   placeholder:text-gray-300"
-                        >
-
-                        <span class="absolute
-                                     right-5
-                                     top-1/2
-                                     -translate-y-1/2
-                                     text-white
-                                     text-2xl">
-
-                            📞
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-                {{-- HELP --}}
-                <p class="text-white text-sm mb-10">
-
-                    Butuh bantuan?
-                    Hubungi Pusat Layanan kami klik
-                    <span class="underline cursor-pointer">
-                        disini
-                    </span>
-
-                </p>
-
-                {{-- BUTTON --}}
-                <button
-                    class="bg-[#B30000]
-                           hover:bg-[#920000]
-                           transition
+                <input
+                    type="text"
+                    placeholder="Ketik disini"
+                    class="w-full
+                           mt-2
+                           bg-[#A40000]
                            text-white
-                           text-[32px]
-                           font-bold
-                           rounded-full
-                           w-[320px]
+                           rounded-[14px]
+                           px-6
                            py-5
-                           shadow-2xl
-                           block
-                           mx-auto">
+                           outline-none">
 
-                    Login
+            </div>
 
-                </button>
+            {{-- INPUT --}}
+            <div class="mt-6">
 
-            </form>
+                <label class="text-white text-sm">
+                    Nomor Telepon
+                </label>
+
+                <input
+                    type="text"
+                    placeholder="Ketik disini"
+                    class="w-full
+                           mt-2
+                           bg-[#A40000]
+                           text-white
+                           rounded-[14px]
+                           px-6
+                           py-5
+                           outline-none">
+
+            </div>
+
+            {{-- HELP --}}
+            <p class="text-white
+                      text-sm
+                      mt-6">
+
+                Butuh bantuan?
+
+                Hubungi Pusat Layanan kami klik
+
+                <a href="/call-center"
+                   class="underline">
+
+                    disini
+
+                </a>
+
+            </p>
+
+            {{-- LOGIN --}}
+            <a href="/"
+               class="bg-[#B10000]
+                      hover:bg-[#900000]
+                      transition
+                      text-white
+                      text-[32px]
+                      font-bold
+                      text-center
+                      py-5
+                      rounded-full
+                      w-[320px]
+                      mx-auto
+                      mt-14
+                      shadow-2xl">
+
+                Login
+
+            </a>
+
+            {{-- SIMULASI GAGAL --}}
+            <a href="/call-center"
+               class="text-center
+                      text-red-300
+                      underline
+                      mt-6">
+
+                Simulasi Login Gagal
+
+            </a>
 
         </div>
 
-    </section>
+    </div>
 
 </div>
 

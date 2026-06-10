@@ -27,39 +27,43 @@
     </h1>
 
     {{-- BUTTON --}}
-    <div class="flex gap-6 mt-16">
+<div class="flex gap-6 mt-16">
 
-        <button
-            class="bg-white
-                   shadow-md
-                   border
-                   px-12
-                   py-4
-                   rounded-[8px]
-                   text-[22px]
-                   hover:bg-gray-100
-                   transition">
+    {{-- BERHASIL --}}
+    <a href="/payment-success"
+       class="bg-white
+              shadow-md
+              border
+              px-12
+              py-4
+              rounded-[8px]
+              text-[22px]
+              hover:bg-[#7BC488]
+              hover:text-white
+              transition">
 
-            Lihat Pesanan Saya
+        Pembayaran Berhasil
 
-        </button>
+    </a>
 
-        <button
-            class="bg-white
-                   shadow-md
-                   border
-                   px-12
-                   py-4
-                   rounded-[8px]
-                   text-[22px]
-                   hover:bg-gray-100
-                   transition">
+    {{-- GAGAL --}}
+    <a href="/payment-failed"
+       class="bg-white
+              shadow-md
+              border
+              px-12
+              py-4
+              rounded-[8px]
+              text-[22px]
+              hover:bg-red-500
+              hover:text-white
+              transition">
 
-            Kembali Ke Beranda
+        Pembayaran Gagal
 
-        </button>
+    </a>
 
-    </div>
+</div>
 
 </div>
 

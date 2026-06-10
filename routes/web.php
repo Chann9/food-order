@@ -1,22 +1,50 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\MenuController;
 use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
-| WEB ROUTES
+| LOGIN PAGE (HALAMAN PERTAMA)
 |--------------------------------------------------------------------------
 */
 
 Route::get('/', function () {
+    return view('auth.login');
+});
+
+/*
+|--------------------------------------------------------------------------
+| LOGIN BERHASIL
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/home', function () {
     return view('customer.home');
 });
 
 /*
 |--------------------------------------------------------------------------
-| CUSTOMER PAGE
+| CALL CENTER
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/call-center', function () {
+    return view('customer.callcenter');
+});
+
+/*
+|--------------------------------------------------------------------------
+| RESTO
+|--------------------------------------------------------------------------
+*/
+
+Route::get('/resto', function () {
+    return view('customer.resto');
+});
+
+/*
+|--------------------------------------------------------------------------
+| MENU
 |--------------------------------------------------------------------------
 */
 
@@ -24,21 +52,35 @@ Route::get('/menu-page', function () {
     return view('customer.menu');
 });
 
-Route::get('/login-page', function () {
-    return view('auth.login');
-})->name('login');
-
-Route::get('/resto', function () {
-    return view('customer.resto');
-});
+/*
+|--------------------------------------------------------------------------
+| CART
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/cart', function () {
     return view('customer.cart');
 });
 
+/*
+|--------------------------------------------------------------------------
+| CASH FLOW
+|--------------------------------------------------------------------------
+*/
+
 Route::get('/success', function () {
     return view('customer.success');
 });
+
+Route::get('/tracking', function () {
+    return view('customer.tracking');
+});
+
+/*
+|--------------------------------------------------------------------------
+| QRIS FLOW
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/qris', function () {
     return view('customer.qris');
@@ -52,46 +94,12 @@ Route::get('/payment-failed', function () {
     return view('customer.payment-failed');
 });
 
-Route::get('/tracking', function () {
-    return view('customer.tracking');
-});
+/*
+|--------------------------------------------------------------------------
+| HISTORY
+|--------------------------------------------------------------------------
+*/
 
 Route::get('/history', function () {
     return view('customer.history');
 });
-
-/*
-|--------------------------------------------------------------------------
-| CRUD MENU
-|--------------------------------------------------------------------------
-*/
-
-Route::middleware(['auth'])->group(function () {
-
-    Route::resource('menu', MenuController::class);
-
-});
-
-Route::get('/call-center', function () {
-    return view('customer.callcenter');
-});
-/*
-|--------------------------------------------------------------------------
-| PROFILE
-|--------------------------------------------------------------------------
-*/
-
-Route::middleware('auth')->group(function () {
-
-    Route::get('/profile', [ProfileController::class, 'edit'])
-        ->name('profile.edit');
-
-    Route::patch('/profile', [ProfileController::class, 'update'])
-        ->name('profile.update');
-
-    Route::delete('/profile', [ProfileController::class, 'destroy'])
-        ->name('profile.destroy');
-
-});
-
-require __DIR__.'/auth.php';

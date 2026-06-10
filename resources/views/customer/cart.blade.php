@@ -236,45 +236,59 @@
             </div>
 
             {{-- PAYMENT --}}
-            <div class="bg-white
-                        rounded-[10px]
-                        shadow-md
-                        p-6
-                        w-[420px]
-                        mt-6">
+<div class="bg-white
+            rounded-[10px]
+            shadow-md
+            p-6
+            w-[420px]
+            mt-6">
 
-                <h2 class="text-[28px]
-                           font-semibold
-                           mb-5">
+    <h2 class="text-[28px]
+               font-semibold
+               mb-5">
 
-                    Metode Pembayaran
+        Metode Pembayaran
 
-                </h2>
+    </h2>
 
-                <button
-                    class="w-full
-                           border
-                           rounded-[10px]
-                           py-4
-                           text-[24px]
-                           mb-4
-                           shadow-sm">
+    {{-- CASH --}}
+    <a href="/success"
+       class="w-full
+              border
+              rounded-[10px]
+              py-4
+              text-[24px]
+              shadow-sm
+              block
+              text-center
+              hover:bg-[#7BC488]
+              hover:text-white
+              transition
+              mb-4">
 
-                    Cash
+        Cash
 
-                </button>
+    </a>
 
-                <button
-                    class="w-full
-                           border
-                           rounded-[10px]
-                           py-4
-                           text-[24px]
-                           shadow-sm">
+    {{-- QRIS --}}
+    <a href="/qris"
+       class="w-full
+              border
+              rounded-[10px]
+              py-4
+              text-[24px]
+              shadow-sm
+              block
+              text-center
+              hover:bg-[#7BC488]
+              hover:text-white
+              transition">
 
-                    Qris
+        Qris
 
-                </button>
+    </a>
+
+</div>
 
             </div>
 

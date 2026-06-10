@@ -1,136 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     @vite('resources/css/app.css')
 
     <link rel="preconnect"
           href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
 
     <title>Call Center</title>
+
 </head>
 
-<body class="bg-black
-             flex
-             items-center
-             justify-center
-             h-screen
-             font-[Poppins]">
+<body class="bg-black font-[Poppins] overflow-hidden">
 
-<div class="w-[1600px]
-            h-[900px]
-            bg-white
-            relative
-            overflow-hidden">
+<div class="w-full
+            h-screen
+            flex
+            items-center
+            justify-center">
 
-    {{-- TOP PATTERN --}}
-    <div class="h-[110px]
-                bg-[#F4F4F4]
-                border-b">
+    <div class="w-[95%]
+                h-[92vh]
+                bg-white
+                rounded-[10px]
+                overflow-hidden
+                relative">
 
-    </div>
+        {{-- TOP PATTERN --}}
+        <div class="h-[90px]
+                    bg-[#F2F5EF]
+                    border-b
+                    flex
+                    items-center
+                    justify-center">
 
-    {{-- BOTTOM PATTERN --}}
-    <div class="absolute
-                bottom-0
-                left-0
-                w-full
-                h-[110px]
-                bg-[#F4F4F4]
-                border-t">
+            <div class="text-[40px] opacity-40">
+                🥬 🥕 🍆 🥦 🌽 🥒 🥗
+            </div>
 
-    </div>
+        </div>
 
-    {{-- CONTENT --}}
-    <div class="flex
-                items-center
-                justify-center
-                gap-28
-                h-full
-                px-20">
+        {{-- CONTENT --}}
+        <div class="flex
+                    items-center
+                    justify-center
+                    h-[calc(100%-180px)]">
 
-        {{-- TEXT --}}
-        <div>
+            {{-- LEFT --}}
+            <div class="w-1/2 pl-24">
 
-            <h1 class="text-[#980000]
-                       text-[64px]
-                       font-bold">
+                <h1 class="text-[#980000]
+                           text-[64px]
+                           font-bold">
 
-                Pusat Layanan
+                    Pusat Layanan
 
-            </h1>
+                </h1>
 
-            <div class="mt-10">
+                <div class="mt-10">
 
-                <p class="text-gray-400
-                          text-[28px]
-                          font-semibold">
+                    <p class="text-gray-400
+                              text-[24px]">
 
-                    WhatsApp
+                        WhatsApp
 
-                </p>
+                    </p>
 
-                <p class="text-[#980000]
-                          text-[34px]
-                          font-semibold
-                          mt-2">
+                    <p class="text-[#980000]
+                              text-[30px]
+                              font-semibold
+                              mt-2">
 
-                    +62 812 3456 719
+                        +62 812 3456 719
 
-                </p>
+                    </p>
+
+                </div>
+
+                <div class="mt-10">
+
+                    <p class="text-gray-400
+                              text-[24px]">
+
+                        Email
+
+                    </p>
+
+                    <p class="text-[#980000]
+                              text-[30px]
+                              font-semibold
+                              mt-2">
+
+                        foor@gmail.com
+
+                    </p>
+
+                </div>
 
             </div>
 
-            <div class="mt-10">
+            {{-- RIGHT --}}
+            <div class="w-1/2 flex justify-center">
 
-                <p class="text-gray-400
-                          text-[28px]
-                          font-semibold">
-
-                    Email
-
-                </p>
-
-                <p class="text-[#980000]
-                          text-[34px]
-                          font-semibold
-                          mt-2">
-
-                    foor@gmail.com
-
-                </p>
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png"
+                    class="w-[520px]">
 
             </div>
 
         </div>
 
-        {{-- IMAGE --}}
-        <img
-            src="https://cdn-icons-png.flaticon.com/512/8637/8637099.png"
-            class="w-[650px]"
-        >
+        {{-- BUTTON --}}
+        <div class="absolute
+                    bottom-16
+                    right-16">
+
+            <a href="/login-page"
+               class="bg-[#980000]
+                      text-white
+                      text-[28px]
+                      px-10
+                      py-4
+                      rounded-[16px]
+                      hover:bg-[#7A0000]
+                      transition">
+
+                ← Kembali
+
+            </a>
+
+        </div>
+
+        {{-- BOTTOM PATTERN --}}
+        <div class="absolute
+                    bottom-0
+                    w-full
+                    h-[90px]
+                    bg-[#F2F5EF]
+                    border-t
+                    flex
+                    items-center
+                    justify-center">
+
+            <div class="text-[40px] opacity-40">
+                🥬 🥕 🍆 🥦 🌽 🥒 🥗
+            </div>
+
+        </div>
 
     </div>
-
-    {{-- BUTTON --}}
-    <button
-        class="absolute
-               right-16
-               bottom-16
-               bg-[#980000]
-               text-white
-               text-[28px]
-               px-10
-               py-4
-               rounded-[18px]">
-
-        ← Kembali
-
-    </button>
 
 </div>
 

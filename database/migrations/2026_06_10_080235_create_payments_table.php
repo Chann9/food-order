@@ -7,49 +7,40 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Run migrations.
      */
     public function up(): void
     {
-        Schema::create('menus', function (Blueprint $table) {
+        Schema::create('payments', function (Blueprint $table) {
 
             $table->id();
 
             /*
             |--------------------------------------------------------------------------
-            | RELASI KE RESTORAN
+            | RELASI
             |--------------------------------------------------------------------------
             */
 
-            $table->foreignId('restoran_id')
-                  ->constrained('restorans')
+            $table->foreignId('order_id')
+                  ->constrained()
                   ->onDelete('cascade');
 
             /*
             |--------------------------------------------------------------------------
-            | DATA MENU
+            | PEMBAYARAN
             |--------------------------------------------------------------------------
             */
 
-            $table->string('nama_menu');
+            $table->enum('metode', [
+                'cash',
+                'qris'
+            ]);
 
-            $table->integer('harga');
-
-            $table->text('deskripsi')->nullable();
-
-            $table->string('gambar')->nullable();
-
-            /*
-            |--------------------------------------------------------------------------
-            | STOCK & STATUS
-            |--------------------------------------------------------------------------
-            */
-
-            $table->integer('stok')
-                  ->default(0);
-
-            $table->boolean('tersedia')
-                  ->default(true);
+            $table->enum('status', [
+                'pending',
+                'success',
+                'failed'
+            ])->default('pending');
 
             /*
             |--------------------------------------------------------------------------
@@ -63,10 +54,10 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('menus');
+        Schema::dropIfExists('payments');
     }
 };
