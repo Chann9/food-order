@@ -1,76 +1,72 @@
-@extends('layouts.customer')
+@foreach ($menus as $menu)
 
-@section('content')
+<div class="bg-white
+            rounded-[24px]
+            shadow-md
+            p-5">
 
-<div class="p-8">
+    <h2 class="text-center
+               text-[#980000]
+               text-[30px]
+               mb-5">
 
-    <h1 class="text-[42px] font-bold mb-8">
-        Menu
-    </h1>
+        {{ $menu->nama_menu }}
 
-    <div class="grid grid-cols-4 gap-10">
+    </h2>
 
-        @for ($i = 0; $i < 8; $i++)
+    {{-- IMAGE --}}
+    <img
+        src="{{ $gambarMenu[$menu->nama_menu] ?? 'https://via.placeholder.com/300' }}"
+        class="w-full
+               h-[180px]
+               object-cover
+               rounded-[14px]">
 
-        <div class="bg-white
-                    rounded-[24px]
-                    shadow-md
-                    p-5">
+    {{-- PRICE --}}
+    <div class="mt-4 text-center">
 
-            <h2 class="text-center
-                       text-[#980000]
-                       text-[30px]
-                       mb-5">
+        <p class="text-[24px]
+                  font-semibold">
 
-                Burger Duo
+            Rp {{ number_format($menu->harga) }}
 
-            </h2>
-
-            <img
-                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200"
-                class="w-full
-                       h-[180px]
-                       object-cover
-                       rounded-[14px]">
-
-            <div class="flex mt-6">
-
-                <button class="bg-[#B32020] text-white w-[70px] rounded-l-full">
-                    -
-                </button>
-
-                <div class="border w-full flex items-center justify-center">
-                    0
-                </div>
-
-                <button class="bg-[#B32020] text-white w-[70px] rounded-r-full">
-                    +
-                </button>
-
-            </div>
-
-        </div>
-
-        @endfor
+        </p>
 
     </div>
 
-    <div class="flex justify-end mt-10">
+    {{-- BUTTON --}}
+    <div class="flex mt-6">
 
-        <a href="/cart"
-           class="bg-[#7BC488]
-                  text-white
-                  text-[24px]
-                  px-10
-                  py-3
-                  rounded-[14px]">
+        <button class="bg-[#B32020]
+                       text-white
+                       w-[70px]
+                       rounded-l-full">
 
-            Keranjang
+            -
 
-        </a>
+        </button>
+
+        <div class="border
+                    w-full
+                    flex
+                    items-center
+                    justify-center">
+
+            0
+
+        </div>
+
+        <button class="bg-[#B32020]
+                       text-white
+                       w-[70px]
+                       rounded-r-full">
+
+            +
+
+        </button>
 
     </div>
 
 </div>
 
-@endsection
+@endforeach
