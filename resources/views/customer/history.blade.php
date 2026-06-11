@@ -59,7 +59,8 @@
                    px-24
                    py-4
                    rounded-[10px]
-                   mt-10">
+                   mt-10"
+            onclick="window.location.href='/pilih-resto'">
 
             Eksplor Resto
 

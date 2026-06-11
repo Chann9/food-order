@@ -45,7 +45,8 @@
                    rounded-[8px]
                    text-[20px]
                    hover:bg-gray-100
-                   transition">
+                   transition"
+            onclick="window.location.href='/history'">
 
             Lihat Pesanan Saya
 
@@ -60,7 +61,8 @@
                    rounded-[8px]
                    text-[20px]
                    hover:bg-gray-100
-                   transition">
+                   transition"
+            onclick="window.location.href='/home'">
 
             Kembali Ke Beranda
 

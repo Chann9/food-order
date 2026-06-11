@@ -178,23 +178,7 @@
 
             </div>
 
-            {{-- BUTTON --}}
-            <button
-                class="bg-[#7BC488]
-                       hover:bg-[#66B474]
-                       transition
-                       text-white
-                       text-[28px]
-                       font-semibold
-                       px-20
-                       py-4
-                       rounded-[10px]
-                       mt-10
-                       ml-[180px]">
-
-                Pesan Sekarang
-
-            </button>
+            
 
         </div>
 

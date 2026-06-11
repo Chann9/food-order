@@ -60,7 +60,7 @@
         {{-- MENU --}}
         <div class="flex gap-16">
 
-            <a href="/"
+            <a href="home"
                class="text-gray-500
                       text-[28px]
                       font-medium">
@@ -69,7 +69,7 @@
 
             </a>
 
-            <a href="/menu-page"
+            <a href="/history"
                class="text-gray-500
                       text-[28px]
                       font-medium">

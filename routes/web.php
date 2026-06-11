@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('auth.customer-login');
 });
 
 /*
@@ -20,7 +20,11 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('customer.home');
-});
+})->name('pilih-resto');
+
+Route::get('/pilih-resto', function () {
+    return view('customer.resto');
+})->name('pilih-resto');
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +33,7 @@ Route::get('/home', function () {
 */
 
 Route::get('/call-center', function () {
-    return view('customer.callcenter');
+    return view('customer.calllcenter');
 });
 
 /*
@@ -91,7 +95,7 @@ Route::get('/payment-success', function () {
 });
 
 Route::get('/payment-failed', function () {
-    return view('customer.payment-failed');
+    return view('customer.payment-failed'); 
 });
 
 /*
