@@ -84,10 +84,10 @@
 
         <!-- BOTTOM IMAGE -->
         <img 
-            src="{{ asset('images/cendol.jpeg') }}"
-            alt="Cendol"
-            class="absolute left-[180px] bottom-0 w-[120px] object-contain"
-        >
+    src="{{ asset('images/cendol.png') }}"
+    alt="Cendol"
+    class="absolute left-[180px] bottom-0 w-[120px] object-contain drop-shadow-2xl"
+>
 
         <!-- SMALL NASGOR -->
         <img 
@@ -138,10 +138,6 @@
                         </span>
 
                     </div>
-
-                    <span class="text-green-600 text-2xl">
-                        ˅
-                    </span>
 
                 </div>
 

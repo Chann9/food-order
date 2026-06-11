@@ -199,18 +199,21 @@
 
         </button>
 
-        <button
+        <!-- BUTTON MODAL -->
+        <label
+            for="cancel-modal"
             class="bg-[#EF2020]
                    text-white
                    px-12
                    py-4
                    rounded-[12px]
                    text-[22px]
-                   font-semibold">
+                   font-semibold
+                   cursor-pointer">
 
             Batalkan Pesanan
 
-        </button>
+        </label>
 
     </div>
 
@@ -464,6 +467,7 @@
     <div class="flex justify-center mt-10">
 
         <button
+            onclick="window.location.href='/menu-page'"
             class="bg-[#2E8B3C]
                    text-white
                    px-12
@@ -475,6 +479,81 @@
             Pesan Lagi
 
         </button>
+
+    </div>
+
+</div>
+
+<!-- MODAL TOGGLE -->
+<input type="checkbox"
+       id="cancel-modal"
+       class="hidden peer">
+
+<!-- MODAL -->
+<div class="fixed
+            inset-0
+            bg-black/70
+            hidden
+            peer-checked:flex
+            items-center
+            justify-center
+            z-50">
+
+    <!-- BOX -->
+    <div class="bg-[#8B8B8B]
+                rounded-[18px]
+                px-12
+                py-8
+                text-center">
+
+        <!-- TEXT -->
+        <p class="text-black
+                  text-[28px]
+                  font-semibold
+                  leading-relaxed">
+
+            Anda yakin ingin
+            <br>
+            membatalkan pesanaan?
+
+        </p>
+
+        <!-- BUTTON -->
+        <div class="flex justify-center gap-12 mt-10">
+
+            <!-- YA -->
+            <a href="/home"
+               class="bg-red-500
+                      hover:bg-red-600
+                      transition
+                      text-white
+                      text-[22px]
+                      px-10
+                      py-2
+                      rounded-full">
+
+                YA
+
+            </a>
+
+            <!-- TIDAK -->
+            <label
+                for="cancel-modal"
+                class="bg-green-500
+                       hover:bg-green-600
+                       transition
+                       text-white
+                       text-[22px]
+                       px-10
+                       py-2
+                       rounded-full
+                       cursor-pointer">
+
+                Tidak
+
+            </label>
+
+        </div>
 
     </div>
 

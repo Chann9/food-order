@@ -93,7 +93,7 @@
                    text-[22px]
                    hover:bg-gray-100
                    transition"
-            onclick="window.location.href='/history'">
+            onclick="window.location.href='/tracking'">
                    
 
             Lihat Pesanan Saya
