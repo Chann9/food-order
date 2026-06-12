@@ -4,11 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class Restorant extends Model
 {
+    protected $table = 'restorants';
+
     protected $fillable = [
         'nama',
         'gambar',
-        'harga'
+        'kategori',
+        'jarak'
     ];
 }

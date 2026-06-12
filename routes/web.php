@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RestorantController;
+
+Route::get('/pilih-resto', [RestorantController::class, 'index'])
+    ->name('pilih-resto');
 
 Route::get('/', function () {
     return view('auth.customer-login');
@@ -10,9 +14,7 @@ Route::get('/home', function () {
     return view('customer.home');
 })->name('pilih-resto');
 
-Route::get('/pilih-resto', function () {
-    return view('customer.resto');
-})->name('pilih-resto');
+Route::get('/resto', [RestorantController::class, 'index']);
 
 
 Route::get('/call-center', function () {
@@ -54,3 +56,5 @@ Route::get('/payment-failed', function () {
 Route::get('/history', function () {
     return view('customer.history');
 });
+
+Route::get('/pilih-resto', [RestorantController::class, 'index']);

@@ -467,7 +467,7 @@
     <div class="flex justify-center mt-10">
 
         <button
-            onclick="window.location.href='/menu-page'"
+            onclick="window.location.href='/pilih-resto'"
             class="bg-[#2E8B3C]
                    text-white
                    px-12

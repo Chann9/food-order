@@ -4,77 +4,56 @@
 
 <div class="px-10 py-10">
 
-    <!-- HEADER -->
-    <div class="flex justify-between items-start">
-
-    </div>
-
     <!-- HERO -->
-    <section class="relative mt-10 bg-[#dce5d7] rounded-[30px] h-[340px] overflow-hidden">
+    <section class="relative
+                    mt-10
+                    h-[370px]
+                    rounded-[30px]
+                    overflow-hidden">
 
-        <!-- LEFT IMAGE -->
+        <!-- HERO IMAGE -->
         <img 
-            src="{{ asset('images/mie-ayam.jpeg') }}"
-            alt="Mie Ayam"
-            class="absolute left-0 top-5 w-[240px] object-contain"
+            src="{{ asset('images/frame.png') }}"
+            alt="Hero"
+            class="w-full
+                   h-full
+                   object-cover"
         >
-
-        <!-- RIGHT IMAGE -->
-        <img 
-            src="{{ asset('images/sate.jpeg') }}"
-            alt="Sate"
-            class="absolute right-0 top-0 w-[260px] object-contain"
-        >
-
-        <!-- CENDOL -->
-        <img 
-            src="{{ asset('images/cendol.png') }}"
-            alt="Cendol"
-            class="absolute left-[190px] bottom-0 w-[110px] object-contain"
-        >
-
-        <!-- NASGOR -->
-        <img 
-            src="{{ asset('images/nasi-goreng.jpeg') }}"
-            alt="Nasgor"
-            class="absolute right-[220px] bottom-5 w-[120px] rounded-full object-cover"
-        >
-
-        <!-- TEXT -->
-        <div class="flex flex-col items-center justify-center h-full">
-
-            <h1 class="text-[55px] font-bold text-[#980000]">
-                Makan Enak?! FoodOrder Aja
-            </h1>
-
-            <p class="text-center text-[#980000] text-[24px] leading-relaxed mt-3">
-                Pesan makanan yang bikin perut nyaman dengan mudah dan cepat.
-                <br>
-                Banyak pilihan restonya
-            </p>
-
-        </div>
 
     </section>
 
     <!-- LOCATION -->
-    <div class="w-full flex justify-center -mt-10 relative z-10">
+    <div class="w-full
+                flex
+                justify-center
+                -mt-10
+                relative
+                z-10">
 
         <div class="bg-[#f8f8f8]
                     shadow-lg
                     rounded-[25px]
-                    w-[600px]
+                    w-[650px]
                     p-10">
 
-            <h2 class="text-center text-[36px] font-semibold text-gray-600 mb-8">
+            <h2 class="text-center
+                       text-[36px]
+                       font-semibold
+                       text-gray-600
+                       mb-8">
+
                 Lokasi Saya
+
             </h2>
 
             <div class="flex items-center gap-4">
 
                 <!-- LOCATION SELECT -->
-                <div class="flex items-center justify-between
-                            border border-[#8BC48B]
+                <div class="flex
+                            items-center
+                            justify-between
+                            border
+                            border-[#8BC48B]
                             rounded-full
                             px-6
                             py-4
@@ -91,10 +70,6 @@
                         </span>
 
                     </div>
-
-                    <span class="text-green-500 text-xl">
-                        ˅
-                    </span>
 
                 </div>
 
@@ -121,49 +96,19 @@
     </div>
 
     <!-- RESTO -->
-    <div class="grid grid-cols-4 gap-y-16 gap-x-10 mt-20">
-
-        @php
-            $restos = [
-                [
-                    'nama' => 'KFC',
-                    'gambar' => asset('images/kfc.jpeg'),
-                    'link' => '/menu-page'
-                ],
-                [
-                    'nama' => 'KFC',
-                    'gambar' => asset('images/kfc.jpeg'),
-                    'link' => '/menu-page'
-                ],
-                [
-                    'nama' => 'KFC',
-                    'gambar' => asset('images/kfc.jpeg'),
-                    'link' => '/menu-page'
-                ],
-                [
-                    'nama' => 'KFC',
-                    'gambar' => asset('images/kfc.jpeg'),
-                    'link' => '/menu-page'
-                ],
-                [
-                    'nama' => 'KFC',
-                    'gambar' => asset('images/kfc.jpeg'),
-                    'link' => '/menu-page'
-                ],
-                [
-                    'nama' => 'KFC',
-                    'gambar' => asset('images/kfc.jpeg'),
-                    'link' => '/menu-page'
-                ],
-            ];
-        @endphp
+    <div class="grid
+                grid-cols-4
+                gap-y-16
+                gap-x-10
+                mt-20">
 
         @foreach ($restos as $resto)
 
-        <a href="{{ $resto['link'] }}">
+        <a href="/menu-page">
 
             <div>
 
+                <!-- CARD IMAGE -->
                 <div class="bg-white
                             shadow-md
                             p-4
@@ -176,26 +121,39 @@
                             duration-300">
 
                     <img
-                        src="{{ $resto['gambar'] }}"
-                        class="w-full h-full object-cover"
+                        src="{{ asset($resto->gambar) }}"
+                        class="w-full
+                               h-full
+                               object-cover"
                     >
 
                 </div>
 
+                <!-- NAMA -->
                 <h2 class="text-[34px]
                            text-[#980000]
                            mt-3">
 
-                    {{ $resto['nama'] }}
+                    {{ $resto->nama }}
 
                 </h2>
 
+                <!-- KATEGORI -->
                 <p class="text-gray-500 text-[18px]">
-                    cepat saji, jajanan
+
+                    {{ $resto->kategori }}
+
                 </p>
 
-                <p class="text-gray-500 text-[18px] flex items-center gap-2">
-                    📍 0.5 km
+                <!-- JARAK -->
+                <p class="text-gray-500
+                          text-[18px]
+                          flex
+                          items-center
+                          gap-2">
+
+                    📍 {{ $resto->jarak }}
+
                 </p>
 
             </div>
